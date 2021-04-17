@@ -14,6 +14,7 @@ const DBURL =
 const mongoClient = mongodb.MongoClient;
 const objectId = mongodb.ObjectID;
 const DB_URL = DBURL || "mongodb://127.0.0.1:27017";
+const PORT = process.env.PORT || 7000;
 
 app.post("/create", async (req, res) => {
   try {
@@ -92,6 +93,6 @@ app.put("/todo/:id", async (req, res) => {
   }
 });
 
-app.listen(7000, () => {
+app.listen(PORT, () => {
   console.log("App is listening in port 7000");
 });
