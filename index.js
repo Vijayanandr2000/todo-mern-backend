@@ -1,10 +1,12 @@
 const express = require("express");
 const mongodb = require("mongodb");
 const cors = require("cors");
+const dotenv = require("dotenv");
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+dotenv.config();
 
 const DBURL =
   "mongodb+srv://vijay:8l1tN8bdDwbQi3tF@cluster0.motqj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
