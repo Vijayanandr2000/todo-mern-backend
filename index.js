@@ -94,5 +94,5 @@ app.put("/todo/:id", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log("App is listening in port 7000");
+  console.log("App is listening");
 });
