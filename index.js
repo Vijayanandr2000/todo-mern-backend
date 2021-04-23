@@ -9,7 +9,7 @@ app.use(cors());
 dotenv.config();
 
 const DBURL =
-  "mongodb+srv://vijay:8l1tN8bdDwbQi3tF@cluster0.motqj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  "mongodb+srv://vijay:pRMfheNghNtq6BVk@cluster0.motqj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 const mongoClient = mongodb.MongoClient;
 const objectId = mongodb.ObjectID;
@@ -31,7 +31,7 @@ app.post("/create", async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    res.sendStatus(500);
+    res.Status(500);
   } finally {
     client.close();
   }
@@ -49,7 +49,7 @@ app.get("/todo", async (req, res) => {
     res.status(200).json({ result });
   } catch (error) {
     console.log(error);
-    res.sendStatus(500);
+    res.sendStatus(500).json({ message: error.message });
   } finally {
     client.close();
   }
