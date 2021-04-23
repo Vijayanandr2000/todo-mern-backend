@@ -9,7 +9,7 @@ app.use(cors());
 dotenv.config();
 
 const DBURL =
-  "mongodb+srv://vijay:pRMfheNghNtq6BVk@cluster0.motqj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  "mongodb+srv://vijay:cFMJusF4KT8BuFte@cluster0.2ail2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 const mongoClient = mongodb.MongoClient;
 const objectId = mongodb.ObjectID;
@@ -41,11 +41,7 @@ app.get("/todo", async (req, res) => {
   try {
     const client = await mongoClient.connect(DB_URL);
     const db = client.db("Todo");
-    const result = await db
-      .collection("list")
-      .find()
-      // .project({ password: 0, _id: 0, key: 0 })
-      .toArray();
+    const result = await db.collection("list").find().toArray();
     res.status(200).json({ result });
   } catch (error) {
     console.log(error);
